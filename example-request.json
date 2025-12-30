@@ -1,0 +1,379 @@
+{
+  "input": {
+    "workflow": {
+      "3": {
+        "inputs": {
+          "seed": 303803959134738,
+          "steps": 50,
+          "cfg": 8.5,
+          "sampler_name": "euler_ancestral",
+          "scheduler": "karras",
+          "denoise": 1,
+          "model": [
+            "16",
+            0
+          ],
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "latent_image": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "4": {
+        "inputs": {
+          "ckpt_name": "sdxlHK_v095c.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "CheckpointLoaderSimple"
+        }
+      },
+      "5": {
+        "inputs": {
+          "value": 576
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "EmptyLatentImage"
+        }
+      },
+      "6": {
+        "inputs": {
+          "text": [
+            "24",
+            0
+          ],
+          "clip": [
+            "16",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "7": {
+        "inputs": {
+          "text": "low quality, photo, render",
+          "clip": [
+            "16",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "9": {
+        "inputs": {
+          "filename_prefix": "ads",
+          "images": [
+            "14",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "14": {
+        "inputs": {
+          "value": 0.05,
+          "image": [
+            "29",
+            0
+          ]
+        },
+        "class_type": "FilmGrain",
+        "_meta": {
+          "title": "FilmGrain"
+        }
+      },
+      "16": {
+        "inputs": {
+          "lora_name": "Cyberpunk_Anime_V2_light_version-SDXL.safetensors",
+          "strength_model": 1,
+          "strength_clip": 1,
+          "model": [
+            "4",
+            0
+          ],
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "LoraLoader",
+        "_meta": {
+          "title": "LoraLoader"
+        }
+      },
+      "19": {
+        "inputs": {
+          "text": "full shot of a military female commando"
+        },
+        "class_type": "Text Multiline",
+        "_meta": {
+          "title": "Text Multiline"
+        }
+      },
+      "22": {
+        "inputs": {
+          "text": "anime, anime character,"
+        },
+        "class_type": "Text _O",
+        "_meta": {
+          "title": "Text _O"
+        }
+      },
+      "24": {
+        "inputs": {
+          "text": "",
+          "text_positive": [
+            "48",
+            0
+          ]
+        },
+        "class_type": "SDXLPromptStyler",
+        "_meta": {
+          "title": "SDXLPromptStyler"
+        }
+      },
+      "27": {
+        "inputs": {
+          "text": "nearest-exact",
+          "image": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "ImageScaleBy",
+        "_meta": {
+          "title": "ImageScaleBy"
+        }
+      },
+      "28": {
+        "inputs": {
+          "pixels": [
+            "27",
+            0
+          ],
+          "vae": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "29": {
+        "inputs": {
+          "samples": [
+            "30",
+            0
+          ],
+          "vae": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "30": {
+        "inputs": {
+          "seed": 474438550115740,
+          "steps": 30,
+          "cfg": 7.5,
+          "sampler_name": "euler_ancestral",
+          "scheduler": "karras",
+          "denoise": 0.55,
+          "model": [
+            "16",
+            0
+          ],
+          "positive": [
+            "31",
+            0
+          ],
+          "negative": [
+            "31",
+            1
+          ],
+          "latent_image": [
+            "28",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "31": {
+        "inputs": {
+          "value": 1.11,
+          "positive": [
+            "6",
+            0
+          ],
+          "negative": [
+            "7",
+            0
+          ],
+          "control_net": [
+            "32",
+            0
+          ],
+          "image": [
+            "42",
+            0
+          ]
+        },
+        "class_type": "ControlNetApplyAdvanced",
+        "_meta": {
+          "title": "ControlNetApplyAdvanced"
+        }
+      },
+      "32": {
+        "inputs": {
+          "control_net_name": "controlnetxlCNXL_2vxpswa7AnytestV4.safetensors"
+        },
+        "class_type": "ControlNetLoader",
+        "_meta": {
+          "title": "ControlNetLoader"
+        }
+      },
+      "42": {
+        "inputs": {
+          "value": 454800453554688,
+          "image": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "MarigoldDepthEstimation",
+        "_meta": {
+          "title": "MarigoldDepthEstimation"
+        }
+      },
+      "43": {
+        "inputs": {
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "46": {
+        "inputs": {
+          "text": " A final stand, cyberpunk, cyberpunk art, retrofuturism"
+        },
+        "class_type": "Text Multiline",
+        "_meta": {
+          "title": "Text Multiline"
+        }
+      },
+      "47": {
+        "inputs": {
+          "text": "",
+          "string_a": [
+            "22",
+            0
+          ],
+          "string_b": [
+            "19",
+            0
+          ]
+        },
+        "class_type": "StringConcatenate",
+        "_meta": {
+          "title": "StringConcatenate"
+        }
+      },
+      "48": {
+        "inputs": {
+          "text": "",
+          "string_a": [
+            "47",
+            0
+          ],
+          "string_b": [
+            "46",
+            0
+          ]
+        },
+        "class_type": "StringConcatenate",
+        "_meta": {
+          "title": "StringConcatenate"
+        }
+      },
+      "49": {
+        "inputs": {
+          "text": "integer"
+        },
+        "class_type": "Constant Number",
+        "_meta": {
+          "title": "Constant Number"
+        }
+      },
+      "50": {
+        "inputs": {
+          "text": "integer"
+        },
+        "class_type": "Constant Number",
+        "_meta": {
+          "title": "Constant Number"
+        }
+      },
+      "51": {
+        "inputs": {
+          "text": "integer"
+        },
+        "class_type": "Constant Number",
+        "_meta": {
+          "title": "Constant Number"
+        }
+      }
+    }
+  }
+}
